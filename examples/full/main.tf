@@ -1,4 +1,4 @@
-module "complete" {
+module "full" {
   source = "../../"
 
   enable_s3_defaults  = true
