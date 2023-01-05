@@ -10,11 +10,11 @@
  */
 
 module "s3" {
-  count = var.enable_s3_defaults == true ? 1 : 0
+  count  = var.enable_s3_defaults == true ? 1 : 0
   source = "./modules/s3"
 }
 
 module "rds" {
-  count = var.enable_s3_defaults == true ? 1 : 0
+  count  = var.enable_s3_defaults == true ? 1 : 0
   source = "./modules/rds"
 }
