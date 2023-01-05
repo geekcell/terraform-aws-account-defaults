@@ -1,6 +1,3 @@
-<!--
-Comment in these badges if they apply to the repository.
-
 ### Code Quality
 [![License](https://img.shields.io/github/license/geekcell/terraform-aws-account-defaults)](https://github.com/geekcell/terraform-aws-account-defaults/blob/master/LICENSE)
 [![GitHub release (latest tag)](https://img.shields.io/github/v/release/geekcell/terraform-aws-account-defaults?logo=github&sort=semver)](https://github.com/geekcell/terraform-aws-account-defaults/releases)
@@ -32,5 +29,3 @@ Comment in these badges if they apply to the repository.
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-account-defaults/nist)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-account-defaults&benchmark=NIST-800-53)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-account-defaults/hipaa)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-account-defaults&benchmark=HIPAA)
 [![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/geekcell/terraform-aws-account-defaults/fedramp_moderate)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=geekcell%2Fterraform-aws-account-defaults&benchmark=FEDRAMP+%28MODERATE%29)
-
--->
