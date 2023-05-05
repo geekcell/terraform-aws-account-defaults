@@ -1,11 +1,20 @@
+## S3 PUBLIC ACCESS
 variable "enable_s3_defaults" {
-  description = "Enable the default that belongs to AWS S3."
+  description = "Enable the S3 submodule."
   default     = true
   type        = bool
 }
 
-variable "enable_rds_defaults" {
-  description = "Enable the default that belongs to AWS RDS."
+## CLOUDWATCH
+variable "enable_cloudwatch_defaults" {
+  description = "Enable the Cloudwatch submodule."
+  default     = true
+  type        = bool
+}
+
+## IAM ACCOUNT PASSWORD POLICY
+variable "enable_iam_account_password_policy" {
+  description = "Enable the IAM Account Password Policy submodule."
   default     = true
   type        = bool
 }

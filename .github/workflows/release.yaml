@@ -1,7 +1,7 @@
 ---
-####################################
-## Draft releases on Push to main ##
-####################################
+#####################
+## Create releases ##
+#####################
 
 #
 # Documentation:
@@ -13,6 +13,8 @@ on:
   push:
     branches: [ main ]
     tags: [ 'v*.*.*' ]
+  pull_request:
+    types: [ labeled ]
 
 permissions:
   contents: write
@@ -75,3 +77,22 @@ jobs:
           tag_name: ${{ steps.tag.outputs.value }}
           draft: false
           prerelease: false
+
+  ###########################
+  # Release preview comment #
+  ###########################
+  release-check:
+    if: github.event.action == 'labeled'
+    runs-on: ubuntu-latest
+    steps:
+      ############################
+      # Checkout the source code #
+      ############################
+      - name: Checkout Code
+        uses: actions/checkout@v3.1.0
+
+      #######################
+      # Post status comment #
+      #######################
+      - name: Post bumpr status comment
+        uses: haya14busa/action-bumpr@v1
