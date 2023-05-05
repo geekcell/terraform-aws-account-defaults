@@ -24,7 +24,7 @@ variable "iam_account_password_policy_password_reuse_prevention" {
 
 variable "iam_account_password_policy_minimum_password_length" {
   description = "Minimum length to require for user passwords."
-  default     = 12
+  default     = 14
   type        = number
 }
 
