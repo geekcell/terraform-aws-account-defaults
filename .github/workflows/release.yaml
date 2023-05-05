@@ -16,9 +16,6 @@ on:
   pull_request:
     types: [ labeled ]
 
-permissions:
-  contents: write
-
 #################
 # Start the job #
 #################
@@ -28,6 +25,7 @@ jobs:
   ###############
   create-release:
     name: Create Release
+    if: github.event.action != 'labeled'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
