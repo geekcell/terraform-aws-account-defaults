@@ -1,20 +1,20 @@
 /**
  * # Terraform AWS Account Defaults
  *
- * This module takes care of the general settings in the running AWS account.
- *
- * Each RDS instance writes its OS metrics to the same Cloudwatch Log Group. This is automatically created by AWS and is therefore not under control with Terraform. Since the data in it gets very large very quickly, we want to at least configure retention of the data.
- *
- * With AWS S3 it is currently still standard that every bucket is public, we would of course like to prevent this directly and configure it directly in the account.
- *
+ * This module takes care of some general account-wide settings in the running AWS account. See the documentation for
+ * each module for more information. All modules are enabled by default.
  */
-
 module "s3" {
-  count  = var.enable_s3_defaults == true ? 1 : 0
+  count  = var.enable_s3_defaults ? 1 : 0
   source = "./modules/s3"
 }
 
-module "rds" {
-  count  = var.enable_rds_defaults == true ? 1 : 0
-  source = "./modules/rds"
+module "cloudwatch" {
+  count  = var.enable_cloudwatch_defaults ? 1 : 0
+  source = "./modules/cloudwatch"
+}
+
+module "iam_account_password_policy" {
+  count  = var.enable_iam_account_password_policy ? 1 : 0
+  source = "./modules/iam_password_policy"
 }

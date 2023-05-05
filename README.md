@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-[![Geek Cell GmbH](https://raw.githubusercontent.com/geekcell/template-terraform-module/main/docs/assets/logo.svg)](https://www.geekcell.io/)
+[![Geek Cell GmbH](https://raw.githubusercontent.com/geekcell/.github/main/geekcell-github-banner.png)](https://www.geekcell.io/)
 
 ### Code Quality
 [![License](https://img.shields.io/github/license/geekcell/terraform-aws-account-defaults)](https://github.com/geekcell/terraform-aws-account-defaults/blob/master/LICENSE)
@@ -35,18 +35,16 @@
 
 # Terraform AWS Account Defaults
 
-This module takes care of the general settings in the running AWS account.
-
-Each RDS instance writes its OS metrics to the same Cloudwatch Log Group. This is automatically created by AWS and is therefore not under control with Terraform. Since the data in it gets very large very quickly, we want to at least configure retention of the data.
-
-With AWS S3 it is currently still standard that every bucket is public, we would of course like to prevent this directly and configure it directly in the account.
+This module takes care of some general account-wide settings in the running AWS account. See the documentation for
+each module for more information. All modules are enabled by default.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_enable_rds_defaults"></a> [enable\_rds\_defaults](#input\_enable\_rds\_defaults) | Enable the default that belongs to AWS RDS. | `bool` | `true` | no |
-| <a name="input_enable_s3_defaults"></a> [enable\_s3\_defaults](#input\_enable\_s3\_defaults) | Enable the default that belongs to AWS S3. | `bool` | `true` | no |
+| <a name="input_enable_cloudwatch_defaults"></a> [enable\_cloudwatch\_defaults](#input\_enable\_cloudwatch\_defaults) | Enable the Cloudwatch submodule. | `bool` | `true` | no |
+| <a name="input_enable_iam_account_password_policy"></a> [enable\_iam\_account\_password\_policy](#input\_enable\_iam\_account\_password\_policy) | Enable the IAM Account Password Policy submodule. | `bool` | `true` | no |
+| <a name="input_enable_s3_defaults"></a> [enable\_s3\_defaults](#input\_enable\_s3\_defaults) | Enable the S3 submodule. | `bool` | `true` | no |
 
 ## Outputs
 
@@ -65,10 +63,12 @@ No providers.
 module "full" {
   source = "../../"
 
-  enable_s3_defaults  = true
-  enable_rds_defaults = true
+  enable_s3_defaults                 = true
+  enable_cloudwatch_defaults         = true
+  enable_iam_account_password_policy = true
 }
 ```
+
 ### Minimum
 ```hcl
 module "minimum" {
