@@ -18,3 +18,10 @@ variable "enable_iam_account_password_policy" {
   default     = true
   type        = bool
 }
+
+## IAM ACCESS ANALYZER
+variable "enable_iam_access_analyzer" {
+  description = "Enable the IAM Access Analyzer submodule."
+  default     = true
+  type        = bool
+}
