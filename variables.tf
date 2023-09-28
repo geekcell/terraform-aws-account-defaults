@@ -1,3 +1,9 @@
+variable "tags" {
+  description = "A map of tags to add to all resources."
+  type        = map(string)
+  default     = {}
+}
+
 ## S3 PUBLIC ACCESS
 variable "enable_s3_defaults" {
   description = "Enable the S3 submodule."

@@ -6,4 +6,6 @@
 resource "aws_accessanalyzer_analyzer" "main" {
   analyzer_name = var.access_analyzer_name
   type          = var.access_analyzer_type
+
+  tags = var.tags
 }

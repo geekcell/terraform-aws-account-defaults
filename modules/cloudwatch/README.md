@@ -16,6 +16,7 @@ terraform import 'aws\_cloudwatch\_log\_group.rds\_log\_group' 'RDSOSMetrics'
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cloudwatch_log_group_rdsosmetrics_retention_in_days"></a> [cloudwatch\_log\_group\_rdsosmetrics\_retention\_in\_days](#input\_cloudwatch\_log\_group\_rdsosmetrics\_retention\_in\_days) | The number of days log events are kept in CloudWatch Logs for the default RDSOSMetrics group. | `number` | `365` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources. | `map(string)` | `{}` | no |
 
 ## Outputs
 
