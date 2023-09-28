@@ -14,4 +14,6 @@
 resource "aws_cloudwatch_log_group" "rdsosmetrics" {
   name              = "RDSOSMetrics"
   retention_in_days = var.cloudwatch_log_group_rdsosmetrics_retention_in_days
+
+  tags = var.tags
 }

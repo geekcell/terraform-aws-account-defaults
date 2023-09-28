@@ -43,8 +43,10 @@ each module for more information. All modules are enabled by default.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_enable_cloudwatch_defaults"></a> [enable\_cloudwatch\_defaults](#input\_enable\_cloudwatch\_defaults) | Enable the Cloudwatch submodule. | `bool` | `true` | no |
+| <a name="input_enable_iam_access_analyzer"></a> [enable\_iam\_access\_analyzer](#input\_enable\_iam\_access\_analyzer) | Enable the IAM Access Analyzer submodule. | `bool` | `true` | no |
 | <a name="input_enable_iam_account_password_policy"></a> [enable\_iam\_account\_password\_policy](#input\_enable\_iam\_account\_password\_policy) | Enable the IAM Account Password Policy submodule. | `bool` | `true` | no |
 | <a name="input_enable_s3_defaults"></a> [enable\_s3\_defaults](#input\_enable\_s3\_defaults) | Enable the S3 submodule. | `bool` | `true` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources. | `map(string)` | `{}` | no |
 
 ## Outputs
 

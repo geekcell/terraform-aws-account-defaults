@@ -12,9 +12,18 @@ module "s3" {
 module "cloudwatch" {
   count  = var.enable_cloudwatch_defaults ? 1 : 0
   source = "./modules/cloudwatch"
+
+  tags = var.tags
 }
 
 module "iam_account_password_policy" {
   count  = var.enable_iam_account_password_policy ? 1 : 0
   source = "./modules/iam_password_policy"
+}
+
+module "iam_access_analyzer" {
+  count  = var.enable_iam_access_analyzer ? 1 : 0
+  source = "./modules/iam_access_analyzer"
+
+  tags = var.tags
 }
